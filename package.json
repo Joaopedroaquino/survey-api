@@ -15,6 +15,13 @@
   },
   "dependencies": {},
   "scripts": {
-    "test": "jest --watch"
+    "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
+    "test:verbose": "jest --passWithNoTests  --runInBand --watch",
+    "test:unit": "yarn run test -- --watch -c jest-unit-config.js",
+    "test:integration": "yarn run test -- --watch -c jest-integration-config-js",
+    "test:staged": "yarn run test -- --findRelatedTests",
+    "test:ci": "yarn run test -- --coverage"
+
+
   }
 }
